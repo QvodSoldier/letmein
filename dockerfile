@@ -6,4 +6,3 @@ RUN sed -i 's/^ASKUSER=/ASKUSER=y/g' /root/starteam/sdk/bin/setup
 RUN sh /root/starteam/sdk/bin/setup
 RUN ln -s /root/starteam/sdk/bin/stcmd /usr/bin
 ENV STARTEAM=/root/starteam/sdk
-RUN echo "hello"
