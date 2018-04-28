@@ -4,5 +4,5 @@ COPY st-sdk-16.0.2.82-runtime-java.tar.gz /
 RUN tar xvfz /st-sdk-16.0.2.82-runtime-java.tar.gz -C /root/starteam
 RUN sed -i 's/^ASKUSER=/ASKUSER=y/g' /root/starteam/sdk/bin/setup
 RUN sh /root/starteam/sdk/bin/setup
-RUN ln -s /root/starteam/sdk/bin/stcmd /usr/bin
+RUN ln -s /root/starteam/sdk/bin/stcmd /usr/bin && echo “hello”
 ENV STARTEAM=/root/starteam/sdk
