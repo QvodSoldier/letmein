@@ -37,4 +37,3 @@ do
 	scp /etc/chrony-1.conf $ip:/etc/chrony.conf
 	ssh $ip systemctl restart chronyd
 done
-echo hello
