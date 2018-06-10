@@ -1,0 +1,14 @@
+version: "0.1.0"
+pre_ci_boot:
+  image:  10.19.0.12:5000/jenkins/maven
+  tag: v1.0.6
+ci:
+  - mkdir -p /tmp/alauda/app &&  cp -r . /tmp/alauda/app/
+  - pwd && find .. 
+  - cd /tmp/alauda/app
+  - pwd && ls -al
+  - mvn package
+  - cp Dockerfile $ALAUDACI_DEST_DIR/Dockerfile
+  - mkdir -p $ALAUDACI_DEST_DIR/target/
+  - cp target/*.jar  $ALAUDACI_DEST_DIR/target/
+#  - sleep 60

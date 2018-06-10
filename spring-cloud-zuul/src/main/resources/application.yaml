@@ -1,0 +1,29 @@
+zuul:
+  ribbonIsolationStrategy: THREAD
+  threadPool:
+    useSeparateThreadPools: true
+    threadPoolKeyPrefix: zuulgateway
+  max:
+    host:
+      max-per-route-connections: 200
+      max-total-connections: 500
+  host:
+    socket-timeout-millis: 8000
+    connect-timeout-millis: 10000
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          thread:
+            interruptOnTimeout: false
+            timeoutInMilliseconds: 80000
+  threadpool:
+    default:
+      coreSize: 30
+      maximumSize: 300
+      maxQueueSize: -1
+      allowMaximumSizeToDivergeFromCoreSize: true

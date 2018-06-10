@@ -1,0 +1,20 @@
+server:
+  port: 11000
+spring:
+  application:
+    name: apigw
+  profiles:
+    active: dev
+  cloud:
+    config:
+      name: apigw
+      profile: dev
+      uri: http://localhost:8001/
+      label: develop
+#注册中心配置
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
